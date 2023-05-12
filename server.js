@@ -8,19 +8,27 @@ require("dotenv").config()
 
 // rapid API
 
-const options = {
-  method: "GET",
-  url: "https://videogames-news2.p.rapidapi.com/videogames_news/search_news",
-  params: { query: "Blizzard" },
-  headers: {
-    "X-RapidAPI-Key": "3a81af6b6cmshc8eb6a158aa8ac4p15cb04jsna09b248bc462",
-    "X-RapidAPI-Host": "videogames-news2.p.rapidapi.com",
-  },
-}
+app.get("/", (req, res) => {
+  const options = {
+    method: "GET",
+    url: "https://videogames-news2.p.rapidapi.com/videogames_news/search_news",
+    params: { query: "Blizzard" },
+    headers: {
+      "X-RapidAPI-Key": process.env.RAPID_API_KEY,
+      "X-RapidAPI-Host": "videogames-news2.p.rapidapi.com",
+    },
+  }
 
-try {
-  const response = await axios.request(options)
-  console.log(response.data)
-} catch (error) {
-  console.error(error)
-}
+  axios
+    .request(options)
+    .then((response) => {
+      console.log(response.data)
+      res.json(response.data)
+    })
+    .catch((error) => {
+      console.error(error)
+      res.status(500).send("An error occurred.")
+    })
+})
+
+app.listen(port, () => console.log("Server Hear at port " + port))
