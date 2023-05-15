@@ -1,22 +1,58 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap");
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 :root {
-  --light-purple: #ede8ff;
-  --dark-purple: #7367f0;
   --white: #ffffff;
   --dark-gray: #2d2d2d;
+  --neon-blue: #0df9eb;
+  --neon-pink: #fd0de4;
+  --neon-yellow: #fdff00;
+
+  /*----- desktops--------- */
+  --side-padding-lg: 2.5rem;
+  --top-bottom-padding-lg: 1.8rem;
+  --text-paragraph-lg: 1rem;
+  --text-medium-lg: 2rem;
+  --text-large-lg: 3rem;
 }
 
 body {
   font-family: "Poppins", sans-serif;
   overflow-y: scroll;
   overflow-x: hidden;
+  background-color: var(--dark-gray);
+  color: var(--white);
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+.colored--btn {
+  background-color: var(--neon-blue);
+  width: 5rem;
+  height: 2rem;
+  color: var(--dark-gray);
+}
+
+.bordered--btn {
+  border: 1px solid var(--neon-blue);
+  width: 5rem;
+  height: 2rem;
+  color: var(--white);
 }
 
 /* nav */
 .nav {
   display: flex;
   flex-direction: column;
+  padding: var(--top-bottom-padding-lg) var(--side-padding-lg);
 }
 
 .nav__container__socials,
@@ -24,7 +60,48 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* border: 1px solid red; */
+  position: relative;
+}
+
+.nav__container__socials {
+  margin-bottom: var(--top-bottom-padding-lg);
+}
+
+.nav__container__socials::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 40%;
+  height: 0.5px;
+  background-color: var(--neon-blue);
+}
+
+.nav__socials i {
+  font-size: 1.1rem;
+  margin-right: 0.9rem;
+  transition: color 1s ease;
+}
+
+.nav__socials i:hover {
+  cursor: pointer;
+  color: var(--neon-blue);
+  cursor: pointer;
+}
+
+.nav li {
+  color: var(--neon-blue);
+  padding-bottom: 0.4rem;
+  font-size: var(--text-paragraph-lg);
+  transition: color 0.3s ease, border-bottom 0.6s ease 0.3s;
+}
+
+.nav li:hover {
+  color: var(--white);
+  cursor: pointer;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--neon-blue);
 }
 
 .nav__redirect ul {
