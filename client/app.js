@@ -45,7 +45,7 @@ const fillGames = (games) => {
         <div class="box__img">
           <img src="${games[index].main_image}" alt="" />
         </div>
-        <div class="box__text">
+        <div class="game__text">
           <h4>${games[index].short_description}</h4>
           <h2>${games[index].title}</h2>
           <h5>${games[index].id}</h5>
