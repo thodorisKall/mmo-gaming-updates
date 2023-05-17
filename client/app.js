@@ -16,10 +16,10 @@ const getGames = () => {
 getGames()
 
 const fillGames = (games) => {
-  // console.log(games[0])
+  let newGrid = document.createElement("div")
+  newGrid.classList.add("new__grid")
   headerTitle.innerText = games[0].short_description
   headerDescription.innerText = games[0].title
-  header.style.backgroundImage = `url('${games[0].main_image}')`
 
   for (let [index, game] of games.entries()) {
     if (index === 0) {
@@ -35,14 +35,14 @@ const fillGames = (games) => {
             <p>
               ${games[1].title}
             </p>
-            <h3>date</h3>
+            <h3>${games[1].id}</h3>
           </div>
         </div>
       </div>`
     } else {
-      mainGrid.innerHTML += `
+      newGrid.innerHTML += `
       <div class="grid__box">
-        <div class="box__img">
+        <div class="game__img">
           <img src="${games[index].main_image}" alt="" />
         </div>
         <div class="game__text">
@@ -53,6 +53,7 @@ const fillGames = (games) => {
       </div>      
       `
     }
+    mainGrid.appendChild(newGrid)
     mainTag.appendChild(mainGrid)
   }
 }
