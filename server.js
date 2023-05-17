@@ -23,7 +23,7 @@ app.get("/video-games", (req, res) => {
   axios
     .request(options)
     .then((response) => {
-      res.json(response.data.slice(0, 9))
+      res.json(response.data.slice(0, 14))
       console.log(response.data)
     })
     .catch((error) => {
