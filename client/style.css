@@ -17,8 +17,8 @@
   /*----- desktops--------- */
   --side-padding-lg: 2.5rem;
   --top-bottom-padding-lg: 1.8rem;
-  --text-paragraph-lg: 1rem;
-  --text-medium-lg: 1.5rem;
+  --text-paragraph-lg: 0.9rem;
+  --text-medium-lg: 1.4rem;
   --text-large-lg: 3rem;
   --small-margin-bottom-lg: 0.8rem;
   --medium-margin-bottom-lg: 1rem;
@@ -161,45 +161,55 @@ button {
   justify-content: space-around;
 }
 
-/* main */
+/* ---------------main------------------ */
 .main {
   height: fit-content;
   width: 100vw;
   padding: var(--top-bottom-padding-lg) var(--side-padding-lg);
+  margin-bottom: 5rem;
 }
 
 .main__banner {
   width: 80vw;
   height: 40vh;
-  border: 1px solid red;
+  margin-bottom: 2rem;
 }
 
 .main__box {
   display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.box__img {
+  width: 30%;
+  margin-right: 1rem;
 }
 
 .box__img img {
-  width: 25%;
-  height: auto;
-  margin-right: 1rem;
-  border: 1px solid red;
+  width: 100%;
+  height: 100%;
 }
 
 .box__text {
+  padding: 0.7rem 1rem 0.2rem;
+  position: relative;
   display: flex;
   flex-direction: column;
-  background-color: var(--light-gray);
   height: 100%;
 }
 
 .box__text h2 {
   font-size: var(--text-medium-lg);
   color: var(--white);
+  margin-bottom: var(--medium-margin-bottom-lg);
 }
 
 .box__text p {
   font-size: var(--text-paragraph-lg);
-  color: var(--dark-gray);
+  color: var(--light-gray);
+  margin-bottom: var(--small-margin-bottom-lg);
+  width: 75%;
 }
 
 .box__text h3 {
@@ -209,29 +219,31 @@ button {
 
 /* ----grid-------- */
 
-.main__grid {
+.new__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
   height: 100%;
   width: 100%;
 }
 
 .grid__box {
-  padding: 0.2rem 1rem;
-
+  padding: 0.7rem 1rem 0.2rem;
   background-color: var(--light-gray);
   display: flex;
   flex-direction: column;
-  height: fit-content;
+  min-height: 45vh;
+  width: 40vw;
+  position: relative;
 }
 
-.box__img img {
-  height: 65%;
+.grid__box img {
+  height: 20vh;
   width: 100%;
 }
 
 .game__text {
+  height: 50%;
   display: flex;
   flex-direction: column;
 }
@@ -251,11 +263,61 @@ button {
 .game__text h5 {
   text-align: end;
   color: var(--dark-gray);
+  position: absolute;
+  bottom: 0.2rem;
+  right: 1rem;
 }
 
 /* footer */
 .footer {
   padding: var(--top-bottom-padding-lg) var(--side-padding-lg);
   height: fit-content;
+  width: 100vw;
   display: flex;
+  justify-content: space-between;
+}
+
+.footer__form {
+  width: 40%;
+}
+
+.footer__form h2 {
+  font-size: var(--text-medium-lg);
+  margin-bottom: var(--small-margin-bottom-lg);
+  color: var(--white);
+}
+
+.footer__form h3 {
+  font-size: var(--text-paragraph-lg);
+  margin-bottom: var(--small-margin-bottom-lg);
+  color: var(--white);
+}
+
+.footer__form input {
+  width: 70%;
+  height: 2rem;
+  background-color: var(--light-gray);
+}
+
+.footer__form input::placeholder {
+  color: var(--neon-blue);
+  padding-left: 1rem;
+  font-style: italic;
+}
+
+.footer__form button {
+  width: 28%;
+  border: none;
+}
+
+.footer ul {
+  list-style: none;
+}
+
+.footer li {
+  margin-bottom: var(--small-margin-bottom-lg);
+}
+
+.footer li:nth-child(1) {
+  font-weight: 700;
 }
