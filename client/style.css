@@ -120,6 +120,10 @@ button {
   margin-right: 1rem;
 }
 
+.nav__redirect li:last-child {
+  margin-right: 0;
+}
+
 .nav__bar ul {
   display: flex;
   list-style: none;
