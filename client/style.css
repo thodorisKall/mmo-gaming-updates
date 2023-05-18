@@ -42,6 +42,13 @@ button {
   background-color: transparent;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 .btn--colored {
   background-color: var(--neon-blue);
   width: 5rem;
@@ -385,4 +392,47 @@ button {
 
 .footer li:nth-child(1) {
   font-weight: 700;
+}
+
+/* ------------footer bar-------------- */
+.footer__bar {
+  padding: var(--top-bottom-padding-lg) var(--side-padding-lg) 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.footer__redirect ul {
+  display: flex;
+  list-style: none;
+}
+
+.footer__redirect i {
+  font-size: 0.8rem;
+  color: var(--neon-pink);
+}
+
+.footer__redirect li {
+  margin-right: 1rem;
+  color: var(--light-gray);
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer__redirect li:hover {
+  color: var(--neon-blue);
+}
+
+.footer__redirect li:last-child {
+  margin-right: 0;
+  color: var(--neon-blue);
+}
+
+.footer__redirect li:last-child:hover {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.footer__making {
+  text-align: end;
+  cursor: pointer;
 }
