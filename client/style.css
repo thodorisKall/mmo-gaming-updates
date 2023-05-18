@@ -253,12 +253,31 @@ button {
 
 /* ----grid-------- */
 
+#articles {
+  color: var(--neon-blue);
+  font-size: var(--text-small-lg);
+  margin-bottom: var(--small-margin-bottom-lg);
+  position: relative;
+}
+
+#articles::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 9%;
+  width: 85%;
+  height: 0.5px;
+  background-color: var(--neon-blue);
+}
+
 .new__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 4rem;
   height: 100%;
   width: 100%;
+  position: relative;
 }
 
 .grid__box {
