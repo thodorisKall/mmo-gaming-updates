@@ -1,6 +1,6 @@
+const headerImg = document.querySelector(".header__img  img")
 const headerTitle = document.querySelector("h1")
 const headerDescription = document.querySelector("h3")
-const header = document.querySelector(".header")
 const mainTag = document.querySelector("main")
 const mainGrid = document.querySelector(".main__grid")
 
@@ -18,6 +18,7 @@ getGames()
 const fillGames = (games) => {
   let newGrid = document.createElement("div")
   newGrid.classList.add("new__grid")
+  headerImg.src = `${games[0].main_image}`
   headerTitle.innerText = games[0].short_description
   headerDescription.innerText = games[0].title
 
