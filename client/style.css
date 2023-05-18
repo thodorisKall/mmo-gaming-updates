@@ -304,11 +304,23 @@ button {
 
 /* footer */
 .footer {
+  position: relative;
   padding: var(--top-bottom-padding-lg) var(--side-padding-lg);
   height: fit-content;
   width: 100vw;
   display: flex;
   justify-content: space-between;
+}
+
+.footer::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -30px;
+  width: 40%;
+  height: 0.5px;
+  background-color: var(--neon-blue);
 }
 
 .footer__form {
