@@ -6,6 +6,10 @@ const cors = require("cors")
 app.use(cors())
 require("dotenv").config()
 
+
+app.get("/", (req, res) => {
+});
+
 // rapid API
 
 app.get("/video-games", (req, res) => {
